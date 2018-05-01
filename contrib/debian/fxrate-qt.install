@@ -1,0 +1,6 @@
+usr/local/bin/fxrate-qt usr/bin
+share/pixmaps/fxrate32.xpm usr/share/pixmaps
+share/pixmaps/fxrate16.xpm usr/share/pixmaps
+share/pixmaps/fxrate128.png usr/share/pixmaps
+debian/fxrate-qt.desktop usr/share/applications
+debian/fxrate-qt.protocol usr/share/kde4/services/

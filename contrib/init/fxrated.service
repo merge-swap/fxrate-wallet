@@ -1,0 +1,22 @@
+[Unit]
+Description=FXRate's distributed currency daemon
+After=network.target
+
+[Service]
+User=fxratecore
+Group=fxratecore
+
+Type=forking
+PIDFile=/var/lib/fxrated/fxrated.pid
+ExecStart=/usr/bin/fxrated -daemon -pid=/var/lib/fxrated/fxrated.pid \
+-conf=/etc/fxratecore/fxrate.conf -datadir=/var/lib/fxrated -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

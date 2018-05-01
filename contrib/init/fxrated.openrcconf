@@ -1,0 +1,33 @@
+# /etc/conf.d/fxrated: config file for /etc/init.d/fxrated
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/fxratecore/fxrate.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/fxrated"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/fxrated.pid"
+
+# Where to write fxrated data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/fxrated"
+
+# User and group to own fxrated process
+#BITCOIND_USER="fxratecore"
+#BITCOIND_GROUP="fxratecore"
+
+# Path to fxrated executable
+#BITCOIND_BIN="/usr/bin/fxrated"
+
+# Nice value to run fxrated under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS="-disablewallet"
+
+# The timeout in seconds OpenRC will wait for bitcoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+BITCOIND_SIGTERM_TIMEOUT=60

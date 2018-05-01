@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/fxrate_bg.qm</file>
+        <file alias="de">locale/fxrate_de.qm</file>
+        <file alias="en">locale/fxrate_en.qm</file>
+        <file alias="es">locale/fxrate_es.qm</file>
+        <file alias="fi">locale/fxrate_fi.qm</file>
+        <file alias="fr">locale/fxrate_fr.qm</file>
+        <file alias="it">locale/fxrate_it.qm</file>
+        <file alias="ja">locale/fxrate_ja.qm</file>
+        <file alias="pl">locale/fxrate_pl.qm</file>
+        <file alias="pt">locale/fxrate_pt.qm</file>
+        <file alias="ru">locale/fxrate_ru.qm</file>
+        <file alias="sk">locale/fxrate_sk.qm</file>
+        <file alias="sv">locale/fxrate_sv.qm</file>
+        <file alias="vi">locale/fxrate_vi.qm</file>
+        <file alias="zh_CN">locale/fxrate_zh_CN.qm</file>
+        <file alias="zh_TW">locale/fxrate_zh_TW.qm</file>
+    </qresource>
+</RCC>
