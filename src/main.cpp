@@ -1755,23 +1755,23 @@ CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
     int nMnCount = mnodeman.CountMasternodes();
     CAmount ret = (blockValue / 100) * 50; // start at 50%
 
-    if (nMnCount >= 1) {
+    if (nMnCount <= 2) {
         ret = (blockValue / 100) * 5;
-    } else if (nMnCount >= 5) {
+    } else if (nMnCount <= 6) {
       ret = (blockValue / 100) * 10;
-    } else if (nMnCount >= 10) {
+    } else if (nMnCount <= 11) {
       ret = (blockValue / 100) * 15;
-    } else if (nMnCount >= 20) {
+    } else if (nMnCount <= 21) {
       ret = (blockValue / 100) * 20;
-    } else if (nMnCount >= 30) {
+    } else if (nMnCount <= 31) {
       ret = (blockValue / 100) * 25;
-    } else if (nMnCount >= 40) {
+    } else if (nMnCount <= 41) {
       ret = (blockValue / 100) * 30;
-    } else if (nMnCount >= 50) {
+    } else if (nMnCount <= 51) {
       ret = (blockValue / 100) * 35;
-    } else if (nMnCount >= 60) {
+    } else if (nMnCount <= 61) {
       ret = (blockValue / 100) * 40;
-    } else if (nMnCount >= 70) {
+    } else if (nMnCount <= 71) {
       ret = (blockValue / 100) * 45;
     }
 
