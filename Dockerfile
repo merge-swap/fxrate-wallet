@@ -29,6 +29,6 @@ RUN deps="alpine-sdk curl autoconf automake libtool boost-dev openssl-dev libeve
   rm -r /opt/db/docs /var/cache/apk/* /wallet /db-$DB_VERSION 
 
 VOLUME ["/home/wallet/.fxrate"]
-EXPOSE 5520/tcp 
+EXPOSE 34222/tcp 
 USER wallet 
 CMD fxrated -printtoconsole

@@ -122,6 +122,14 @@ public:
 
 		    vFixedSeeds.clear();
         vSeeds.clear();
+        //Merge Swap Seeds
+        vSeeds.push_back(CDNSSeedData("Merge Seed 1", "192.95.62.169"));
+        vSeeds.push_back(CDNSSeedData("Merge Seed 2", "217.144.181.130"));
+        vSeeds.push_back(CDNSSeedData("Merge Seed 3", "217.144.181.130"));
+        vSeeds.push_back(CDNSSeedData("Merge Seed 4", "45.32.133.252"));
+        vSeeds.push_back(CDNSSeedData("Merge Seed 5", "45.32.133.252"));
+        vSeeds.push_back(CDNSSeedData("Merge Seed 6", "74.91.18.98"));
+
         vSeeds.push_back(CDNSSeedData("fxrate.eu", "seed1.fxrate.eu"));
         vSeeds.push_back(CDNSSeedData("fxrate.eu", "seed2.fxrate.eu"));
         vSeeds.push_back(CDNSSeedData("fxrate.eu", "seed3.fxrate.eu"));
