@@ -3,7 +3,7 @@ LABEL maintainer="Aviator" \
       discord="Aviator#1024"
 
 ENV DB_VERSION=4.8.30.NC 
-RUN deps="alpine-sdk curl autoconf automake libtool boost-dev openssl-dev libevent-dev git" && \
+RUN deps="alpine-sdk curl autoconf automake libtool boost-dev openssl-dev libevent-dev git musl-dev" && \
   apk add --no-cache -U $deps dumb-init boost boost-program_options libevent libssl1.0 && \
   curl -L http://download.oracle.com/berkeley-db/db-$DB_VERSION.tar.gz \
   | tar zx && \
