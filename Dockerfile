@@ -20,7 +20,7 @@ RUN apt-get update &&\
     apt-get clean &&\
     useradd -ms /bin/bash wallet
 
-VOLUME ["/home/wallet/.fxrate"]
+VOLUME ["/home/wallet/.fxratecore"]
 EXPOSE 34222/tcp 
 USER wallet 
 CMD fxrated -printtoconsole
