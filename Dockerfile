@@ -9,6 +9,8 @@ RUN apt-get update &&\
     unzip /tmp/fxrate.zip -d /usr/local/bin &&\
     rm /usr/local/bin/fxrate-qt &&\ 
     rm /usr/local/bin/fxrate-tx && \
+    chmod +x /usr/local/bin/fxrated &&\
+    chmod +x /usr/local/bin/fxrate-cli &&\
     apt-get purge -y wget  &&\
     rm -rf /tmp/* &&\
     rm -rf /var/lib/apt/lists/* &&\
