@@ -1,32 +1,18 @@
-FROM alpine:3.6 
+FROM ubuntu:16.04
 LABEL maintainer="Aviator" \
       discord="Aviator#1024"
 
-ENV DB_VERSION=4.8.30.NC 
-RUN deps="alpine-sdk curl autoconf automake libtool boost-dev openssl-dev libevent-dev git libbsd-dev" && \
-  apk add --no-cache -U $deps dumb-init boost boost-program_options libevent libssl1.0 && \
-  curl -L http://download.oracle.com/berkeley-db/db-$DB_VERSION.tar.gz \
-  | tar zx && \
-  cd /db-$DB_VERSION/build_unix && \
-  ../dist/configure \
-  --prefix=/opt/db \
-  --enable-cxx \
-  --disable-shared \
-  --with-pic && \
-  make install && \
-  mkdir /wallet &&\
-  cd /wallet && \
-  git clone https://github.com/merge-swap/fxrate-wallet.git . &&\   
-  ./autogen.sh && \ 
-  ./configure LDFLAGS=-L/opt/db/lib CPPFLAGS=-I/opt/db/include && \ 
-  make install && \ 
-  strip /usr/local/bin/fxrated &&\ 
-  strip /usr/local/bin/fxrate-cli &&\ 
-  rm /usr/local/bin/fxrate-tx &&\ 
-  rm /usr/local/bin/test_fxrate &&\ 
-  adduser -D wallet && \ 
-  apk del $deps && \
-  rm -r /opt/db/docs /var/cache/apk/* /wallet /db-$DB_VERSION 
+RUN apt-get update &&\
+    apt-get install -y wget libboost-system1.58.0 libboost-filesystem1.58.0 libboost-program-options1.58.0 \
+    libboost-thread1.58.0 libboost-chrono1.58.0 libevent-2.0-5 libevent-pthreads-2.0-5 &&\
+    wget https://github.com/merge-swap/fxrate-wallet/releases/download/1.0.0.1/FXRateCoin_v1.0.0.1_linux.zip -O /tmp/fxrate.tar.gz &&\
+    tar -xvzf /tmp/fxrate.tar.gz -C /usr/local/bin &&\
+    rm /usr/local/bin/fxrate-qt &&\ 
+    rm /usr/local/bin/fxrate-tx && \
+    apt-get purge -y wget  &&\
+    rm -rf /var/lib/apt/lists/* &&\
+    apt-get clean &&\
+    useradd -ms /bin/bash wallet
 
 VOLUME ["/home/wallet/.fxrate"]
 EXPOSE 34222/tcp 
